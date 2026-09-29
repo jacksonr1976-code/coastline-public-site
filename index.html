@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Pool Service & Repair in Murrells Inlet | Coastline Pools, LLC</title>
-  <meta name="description" content="Dependable weekly pool service, pool repair, equipment service and problem-pool help in Murrells Inlet and across the Grand Strand. Call Coastline Pools, LLC at (843) 999-0171.">
+
+  <meta name="description" content="Coastline Pools, LLC provides dependable weekly pool service, pool repair, equipment service and problem-pool help throughout Murrells Inlet and the Grand Strand. Call or text (843) 999-0171.">
+
+  <meta name="theme-color" content="#032f46">
 
   <style>
     * {
@@ -15,21 +18,26 @@
     }
 
     :root {
-      --navy: #052f46;
-      --deep: #032638;
+      --navy: #032f46;
+      --deep: #021f30;
       --blue: #087ea4;
       --cyan: #12bfe8;
-      --orange: #ff8a24;
       --light: #eefaff;
+      --orange: #ff8a24;
       --white: #ffffff;
-      --text: #123243;
+      --text: #092c3d;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: #fff;
+      background: white;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     a {
@@ -37,132 +45,156 @@
     }
 
     .wrap {
-      width: min(1180px, 92%);
+      width: min(1180px, 90%);
       margin: auto;
     }
 
     /* HEADER */
 
     header {
-      background: var(--deep);
+      background: rgba(2, 47, 70, .98);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 3px 16px rgba(0,0,0,.18);
+      box-shadow: 0 5px 20px rgba(0,0,0,.18);
     }
 
     .nav {
-      min-height: 86px;
+      min-height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 30px;
     }
 
     .brand img {
+      width: 205px;
+      max-height: 78px;
+      object-fit: contain;
       display: block;
-      max-height: 68px;
-      max-width: 300px;
     }
 
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
+      font-weight: 800;
     }
 
-    nav a {
+    .nav-links a {
       color: white;
-      font-weight: 700;
-      font-size: .94rem;
     }
 
-    .call-small {
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .phone {
       background: var(--orange);
-      color: #102c3b;
-      padding: 11px 17px;
+      color: var(--deep) !important;
+      padding: 14px 21px;
       border-radius: 999px;
       font-weight: 900;
-      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(255,138,36,.22);
     }
 
     /* HERO */
 
     .hero {
       position: relative;
+      min-height: 720px;
       overflow: hidden;
-      color: white;
       background:
-        linear-gradient(110deg, rgba(2,42,62,.96) 0%, rgba(5,100,129,.90) 48%, rgba(13,187,224,.72) 100%);
+        radial-gradient(circle at 85% 20%, rgba(18,191,232,.35), transparent 30%),
+        linear-gradient(115deg, #06364c 0%, #087a9c 58%, #16bde2 100%);
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      border: 2px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      right: -190px;
+      top: -220px;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.07);
-      right: -130px;
-      top: -170px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 14px;
+      background: linear-gradient(90deg,
+        var(--orange),
+        #ffd447,
+        var(--cyan),
+        var(--orange));
     }
 
     .hero-grid {
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 65px;
       position: relative;
       z-index: 2;
-      min-height: 610px;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 50px;
-      padding: 65px 0;
     }
 
     .eyebrow {
-      color: #8cecff;
+      color: #7eeaff;
       font-weight: 900;
-      letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: .85rem;
-      margin-bottom: 16px;
+      letter-spacing: 3px;
+      font-size: .9rem;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(3rem, 6vw, 5.8rem);
-      line-height: .92;
-      letter-spacing: -3px;
-      max-width: 780px;
-      margin-bottom: 24px;
+    .hero h1 {
+      font-size: clamp(3.6rem, 6.8vw, 6.8rem);
+      line-height: .91;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+      max-width: 760px;
     }
 
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 650px;
-      color: #e4f8ff;
-      margin-bottom: 30px;
+    .hero h1 span {
+      color: var(--orange);
     }
 
-    .buttons {
+    .hero-copy {
+      max-width: 670px;
+      font-size: 1.2rem;
+      margin: 28px 0;
+      color: #e8f9ff;
+    }
+
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 15px;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 23px;
+      padding: 17px 27px;
       border-radius: 999px;
       font-weight: 900;
-      transition: transform .15s ease;
+      font-size: 1rem;
+      transition: transform .2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .btn-orange {
       background: var(--orange);
-      color: #092c3e;
+      color: var(--deep);
     }
 
     .btn-white {
@@ -170,314 +202,530 @@
       color: var(--deep);
     }
 
-    .hero-logo {
+    .hero-art {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .hero-logo img {
-      width: min(430px, 100%);
-      filter: drop-shadow(0 18px 25px rgba(0,0,0,.28));
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 510px;
+      height: 510px;
+      background: rgba(255,255,255,.10);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 22px rgba(255,255,255,.04),
+        0 0 0 44px rgba(255,255,255,.025);
+    }
+
+    .hero-art img {
+      width: min(520px, 100%);
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 28px 30px rgba(0,0,0,.38));
     }
 
     /* TRUST BAR */
 
     .trust {
       background: var(--orange);
-      color: #092c3e;
-      font-weight: 900;
+      color: var(--deep);
     }
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
       text-align: center;
-    }
-
-    .trust-grid div {
-      padding: 18px 12px;
-      border-right: 1px solid rgba(0,0,0,.15);
-    }
-
-    .trust-grid div:last-child {
-      border-right: none;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 45px;
-    }
-
-    .section-head span {
-      color: var(--blue);
+      padding: 24px 12px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: .8rem;
+      border-right: 1px solid rgba(3,47,70,.18);
     }
 
-    h2 {
-      color: var(--deep);
-      font-size: clamp(2.2rem,4vw,3.5rem);
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 100px 0 70px;
+      background:
+        linear-gradient(rgba(238,250,255,.96), rgba(238,250,255,.96)),
+        url("clear header no number.png") center/cover;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .88rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
       line-height: 1;
-      margin: 10px 0 16px;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
     }
 
-    .section-head p {
-      font-size: 1.05rem;
-      color: #526c79;
+    .section-copy {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.15rem;
+      color: #456676;
     }
 
     /* SERVICES */
 
     .services {
+      padding: 30px 0 110px;
       background: var(--light);
     }
 
-    .cards {
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
-    .card {
+    .service-card {
       background: white;
-      border-radius: 20px;
-      padding: 34px;
-      box-shadow: 0 10px 35px rgba(5,47,70,.08);
-      border-top: 5px solid var(--cyan);
+      border-radius: 24px;
+      padding: 38px 32px;
+      min-height: 310px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,48,72,.10);
+      border-top: 7px solid var(--cyan);
     }
 
-    .card:nth-child(2) {
+    .service-card:nth-child(2) {
       border-top-color: var(--orange);
     }
 
-    .card h3 {
-      font-size: 1.45rem;
-      color: var(--deep);
-      margin-bottom: 12px;
+    .service-number {
+      font-size: 4.2rem;
+      font-weight: 900;
+      color: rgba(18,191,232,.12);
+      line-height: 1;
+      position: absolute;
+      right: 24px;
+      top: 20px;
     }
 
-    .card p {
-      color: #58717e;
+    .service-card h3 {
+      font-size: 1.7rem;
+      margin: 28px 0 14px;
     }
 
-    /* PROBLEM POOL */
+    .service-card p {
+      color: #4d6a78;
+      font-size: 1.05rem;
+    }
 
-    .problem {
+    /* COASTLINE DIFFERENCE */
+
+    .coastline-section {
       background: var(--deep);
       color: white;
+      padding: 105px 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .problem-grid {
+    .coastline-section::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(18,191,232,.08);
+      right: -200px;
+      bottom: -220px;
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .difference-copy h2 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .difference-copy h2 span {
+      color: var(--orange);
+    }
+
+    .difference-copy p {
+      color: #d3edf6;
+      font-size: 1.15rem;
+      margin-bottom: 25px;
+    }
+
+    .difference-box {
+      background: linear-gradient(145deg, #078bb1, #13bfe5);
+      color: white;
+      padding: 45px;
+      border-radius: 30px;
+      box-shadow: 0 25px 55px rgba(0,0,0,.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .difference-box h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .check {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin: 17px 0;
+    }
+
+    .check span {
+      color: var(--orange);
+      font-size: 1.35rem;
+      margin-right: 8px;
+    }
+
+    /* LOCAL SECTION */
+
+    .local {
+      padding: 110px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+      text-align: left;
+      margin-top: 55px;
+    }
+
+    .local-art {
+      background: linear-gradient(145deg, #06364c, #0aa4cd);
+      border-radius: 30px;
+      padding: 35px;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .local-art::after {
+      content: "GRAND STRAND";
+      position: absolute;
+      bottom: 20px;
+      left: 25px;
+      color: rgba(255,255,255,.13);
+      font-size: 3.6rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .local-art img {
+      width: 88%;
+      max-width: 400px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 20px 25px rgba(0,0,0,.35));
+    }
+
+    .local-copy h3 {
+      font-size: 2.6rem;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .local-copy p {
+      color: #4a6877;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .area {
+      background: #e9f9fe;
+      border: 1px solid #a8e7f6;
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+    }
+
+    /* REAL SERVICE */
+
+    .real-service {
+      padding: 100px 0;
+      background: #f2fbfe;
+    }
+
+    .real-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
     }
 
-    .problem h2 {
-      color: white;
-    }
-
-    .problem p {
-      color: #c9edf6;
-      font-size: 1.08rem;
+    .real-copy h2 {
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: 1;
       margin-bottom: 25px;
+      letter-spacing: -2px;
     }
 
-    .problem-box {
-      border-radius: 22px;
-      padding: 35px;
-      background: linear-gradient(135deg,#087ea4,#11bde3);
-      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+    .real-copy p {
+      font-size: 1.13rem;
+      color: #456676;
+      margin-bottom: 18px;
     }
 
-    .problem-box strong {
-      display: block;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+    .promise {
+      background: white;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 18px 50px rgba(0,48,72,.10);
+      border-left: 8px solid var(--orange);
     }
 
-    .problem-box ul {
-      list-style: none;
+    .promise h3 {
+      font-size: 2rem;
+      margin-bottom: 18px;
     }
 
-    .problem-box li {
-      padding: 8px 0;
-      font-weight: 700;
-    }
-
-    .problem-box li::before {
-      content: "✓ ";
-      color: var(--orange);
-      font-weight: 900;
-    }
-
-    /* LOCAL */
-
-    .areas {
-      text-align: center;
-    }
-
-    .area-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 850px;
-      margin: 30px auto 0;
-    }
-
-    .area-list span {
-      background: #e8f8fc;
-      border: 1px solid #bcecf6;
-      color: var(--deep);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-weight: 800;
+    .promise p {
+      color: #4b6978;
+      margin-bottom: 18px;
     }
 
     /* REVIEWS */
 
     .reviews {
-      background: #f6fbfd;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .review {
+      padding: 100px 0;
       background: white;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 8px 30px rgba(5,47,70,.07);
+      text-align: center;
+    }
+
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 35px;
+      padding: 18px 28px;
+      background: #fff8ef;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1.15rem;
     }
 
     .stars {
-      color: #ff9b27;
-      font-size: 1.25rem;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      color: var(--orange);
+      letter-spacing: 3px;
     }
 
-    .review strong {
-      display: block;
-      margin-top: 15px;
-      color: var(--deep);
+    .reviews p.review-copy {
+      max-width: 700px;
+      margin: 25px auto 0;
+      color: #4a6877;
+      font-size: 1.08rem;
     }
 
     /* CTA */
 
     .cta {
-      background: linear-gradient(110deg,#087ea4,#10bfe5);
-      color: white;
+      padding: 105px 0;
       text-align: center;
+      color: white;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.12), transparent 25%),
+        linear-gradient(120deg, #087fa4, #13bee5);
     }
 
     .cta h2 {
-      color: white;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
     }
 
     .cta p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin: 0 auto 30px;
     }
 
-    .cta .buttons {
+    .cta-buttons {
+      display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     /* FOOTER */
 
     footer {
-      background: #021e2c;
-      color: #d5eef5;
-      padding: 45px 0;
+      background: #021f30;
+      color: white;
+      padding: 60px 0;
     }
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      gap: 40px;
     }
 
-    footer img {
-      max-width: 240px;
-      max-height: 75px;
-      margin-bottom: 15px;
+    .footer-brand img {
+      width: 220px;
+      display: block;
+      margin-bottom: 18px;
     }
 
-    footer a {
-      color: white;
-      font-weight: 800;
+    .footer-brand p {
+      color: #c8e4ee;
+      margin-top: 5px;
     }
 
     .footer-phone {
-      font-size: 1.35rem;
       color: var(--orange);
+      font-weight: 900;
+      font-size: 1.8rem;
     }
 
     /* MOBILE */
 
-    @media (max-width: 800px) {
-      nav a:not(.call-small) {
+    @media (max-width: 900px) {
+
+      .nav-links a:not(.phone) {
         display: none;
       }
 
       .brand img {
-        max-width: 210px;
-        max-height: 58px;
+        width: 160px;
+      }
+
+      .hero {
+        min-height: auto;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
         min-height: auto;
-        padding: 55px 0;
+        padding: 80px 0 95px;
+        gap: 45px;
       }
 
-      .hero-logo {
-        order: -1;
-      }
-
-      .hero-logo img {
-        max-width: 280px;
-      }
-
-      h1 {
+      .hero h1 {
+        font-size: clamp(3.2rem, 14vw, 5.4rem);
         letter-spacing: -2px;
       }
 
-      .cards,
-      .review-grid,
-      .problem-grid {
-        grid-template-columns: 1fr;
+      .hero-art img {
+        max-width: 390px;
+      }
+
+      .hero-art::before {
+        width: 370px;
+        height: 370px;
       }
 
       .trust-grid {
         grid-template-columns: 1fr;
       }
 
-      .trust-grid div {
-        border-right: none;
-        border-bottom: 1px solid rgba(0,0,0,.12);
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(3,47,70,.15);
+      }
+
+      .service-grid,
+      .difference-grid,
+      .local-grid,
+      .real-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .local-copy {
+        text-align: center;
+      }
+
+      .areas {
+        justify-content: center;
       }
 
       .footer-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .nav {
+        min-height: 78px;
+      }
+
+      .brand img {
+        width: 135px;
+      }
+
+      .phone {
+        padding: 11px 14px;
+        font-size: .82rem;
+      }
+
+      .hero-grid {
+        padding-top: 60px;
+      }
+
+      .hero-copy {
+        font-size: 1.05rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 2.7rem;
+      }
+
+      .difference-box,
+      .promise {
+        padding: 30px 24px;
+      }
+
+      .cta h2 {
+        font-size: 3.4rem;
       }
     }
   </style>
@@ -487,233 +735,431 @@
 
 <header>
   <div class="wrap nav">
+
     <a class="brand" href="#">
-      <img src="clear header no number.png" alt="Coastline Pools LLC">
+      <img src="clear header no number.png" alt="Coastline Pools, LLC">
     </a>
 
-    <nav>
+    <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#areas">Service Areas</a>
       <a href="#reviews">Reviews</a>
-      <a class="call-small" href="tel:+18439990171">Call (843) 999-0171</a>
+      <a class="phone" href="tel:+18439990171">Call (843) 999-0171</a>
     </nav>
+
   </div>
 </header>
 
+
 <main>
 
-<section class="hero">
-  <div class="wrap hero-grid">
+  <section class="hero">
 
-    <div>
-      <div class="eyebrow">Murrells Inlet • Grand Strand</div>
+    <div class="wrap hero-grid">
 
-      <h1>POOL SERVICE WITHOUT THE HEADACHE.</h1>
+      <div>
 
-      <p>
-        Dependable weekly pool care, equipment repair and help when your pool
-        turns into a problem. Local service from Coastline Pools, LLC.
-      </p>
+        <div class="eyebrow">
+          Murrells Inlet • Grand Strand
+        </div>
 
-      <div class="buttons">
-        <a class="btn btn-orange" href="tel:+18439990171">
-          Call (843) 999-0171
-        </a>
+        <h1>
+          Pool Service<br>
+          Without the<br>
+          <span>Headache.</span>
+        </h1>
 
-        <a class="btn btn-white" href="sms:+18439990171">
-          Text Coastline
-        </a>
+        <p class="hero-copy">
+          Weekly pool care, repairs and help when your pool turns into a problem.
+          Coastline Pools keeps Grand Strand pools clean, clear and ready to enjoy.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="btn btn-orange"
+             href="tel:+18439990171">
+             Call (843) 999-0171
+          </a>
+
+          <a class="btn btn-white"
+             href="sms:+18439990171">
+             Text Coastline
+          </a>
+
+        </div>
+
       </div>
+
+      <div class="hero-art">
+        <img src="circular logo.png"
+             alt="Coastline Pools">
+      </div>
+
     </div>
 
-    <div class="hero-logo">
-      <img src="circular logo.png" alt="Coastline Pools official logo">
+  </section>
+
+
+  <section class="trust">
+
+    <div class="trust-grid">
+
+      <div class="trust-item">
+        Local Grand Strand Service
+      </div>
+
+      <div class="trust-item">
+        Weekly Pool Care
+      </div>
+
+      <div class="trust-item">
+        Repairs & Problem Pools
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<div class="trust">
-  <div class="wrap trust-grid">
-    <div>LOCAL GRAND STRAND SERVICE</div>
-    <div>WEEKLY POOL CARE</div>
-    <div>REPAIR & PROBLEM-POOL HELP</div>
-  </div>
-</div>
 
-<section class="services" id="services">
-  <div class="wrap">
+  <section class="intro" id="services">
 
-    <div class="section-head">
-      <span>Coastline Pools, LLC</span>
-      <h2>We Take Care of the Pool.</h2>
-      <p>
-        Routine maintenance or something has gone wrong — Coastline helps keep
-        your pool clean, clear and ready to use.
+    <div class="wrap">
+
+      <div class="section-label">
+        Coastline Pools, LLC
+      </div>
+
+      <h2 class="section-title">
+        We Take Care of the Pool.<br>
+        You Enjoy It.
+      </h2>
+
+      <p class="section-copy">
+        From routine weekly service to equipment trouble, algae and pools
+        that have gotten away from you, Coastline is built around keeping
+        your pool usable instead of turning it into another weekend project.
       </p>
+
     </div>
 
-    <div class="cards">
+  </section>
 
-      <article class="card">
+
+  <section class="services">
+
+    <div class="wrap service-grid">
+
+      <article class="service-card">
+
+        <div class="service-number">01</div>
+
         <h3>Weekly Pool Service</h3>
+
         <p>
           Dependable recurring pool care including cleaning, water treatment,
           brushing, vacuuming and routine equipment checks.
         </p>
+
       </article>
 
-      <article class="card">
+
+      <article class="service-card">
+
+        <div class="service-number">02</div>
+
         <h3>Pool & Equipment Repair</h3>
+
         <p>
-          Trouble with pumps, filters, plumbing or other pool equipment?
-          Coastline can assess the problem and help get your system working again.
+          Pumps, filters, plumbing and equipment problems happen.
+          Coastline can assess the issue and help get the system working again.
         </p>
+
       </article>
 
-      <article class="card">
+
+      <article class="service-card">
+
+        <div class="service-number">03</div>
+
         <h3>Green & Problem Pools</h3>
+
         <p>
-          Cloudy water, algae or a pool that's gotten away from you? We'll
-          diagnose the problem and build a plan to get it back under control.
+          Cloudy water, algae or a pool that's gotten away from you?
+          We'll diagnose what is happening and build a plan to get it back under control.
         </p>
+
       </article>
 
     </div>
-  </div>
-</section>
 
-<section class="problem">
-  <div class="wrap problem-grid">
+  </section>
 
-    <div>
-      <div class="eyebrow">Something Wrong?</div>
-      <h2>Your Pool Doesn't Have to Become Your Weekend Project.</h2>
 
-      <p>
-        Whether you need regular service or help figuring out what's going
-        wrong, call or text Coastline. We'll start with the problem and determine
-        the right next step.
-      </p>
+  <section class="coastline-section">
 
-      <a class="btn btn-orange" href="sms:+18439990171">
-        Text Coastline
-      </a>
-    </div>
+    <div class="wrap difference-grid">
 
-    <div class="problem-box">
-      <strong>We can help with:</strong>
+      <div class="difference-copy">
 
-      <ul>
-        <li>Weekly cleaning and maintenance</li>
-        <li>Water treatment and balancing</li>
-        <li>Green and algae-affected pools</li>
-        <li>Filter and equipment issues</li>
-        <li>Pool repair and service calls</li>
-      </ul>
-    </div>
+        <div class="eyebrow">
+          Something Wrong?
+        </div>
 
-  </div>
-</section>
+        <h2>
+          Your Pool Doesn't Have to Become Your
+          <span>Weekend Project.</span>
+        </h2>
 
-<section class="areas" id="areas">
-  <div class="wrap">
-
-    <div class="section-head">
-      <span>Local Pool Service</span>
-      <h2>Serving the Grand Strand</h2>
-      <p>
-        Coastline Pools provides local pool service throughout our Grand Strand
-        service area.
-      </p>
-    </div>
-
-    <div class="area-list">
-      <span>Murrells Inlet</span>
-      <span>Garden City Beach</span>
-      <span>Surfside Beach</span>
-      <span>Myrtle Beach</span>
-      <span>Carolina Forest</span>
-      <span>Pawleys Island</span>
-      <span>Georgetown</span>
-    </div>
-
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="wrap">
-
-    <div class="section-head">
-      <span>Local Customers</span>
-      <h2>Pool Service You Can Count On.</h2>
-      <p>
-        Coastline is built around dependable local service, clear communication
-        and taking care of the work that needs to be done.
-      </p>
-    </div>
-
-    <div class="review-grid">
-
-      <div class="review">
-        <div class="stars">★★★★★</div>
         <p>
-          Dependable local pool service with straightforward communication and
-          attention to the pool.
+          Whether you need regular service or you're staring at a pool
+          that doesn't look right, start with Coastline.
         </p>
-        <strong>Coastline Customer</strong>
+
+        <p>
+          Call or text us, tell us what's happening and we'll determine
+          the right next step.
+        </p>
+
+        <a class="btn btn-orange"
+           href="sms:+18439990171">
+           Text Coastline
+        </a>
+
       </div>
 
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>
-          Weekly maintenance, water care and help when something needs attention.
-        </p>
-        <strong>Grand Strand Pool Owner</strong>
-      </div>
 
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>
-          Local service focused on keeping the pool clean, clear and ready to enjoy.
-        </p>
-        <strong>Local Customer</strong>
+      <div class="difference-box">
+
+        <h3>We can help with:</h3>
+
+        <div class="check">
+          <span>✓</span> Weekly cleaning and maintenance
+        </div>
+
+        <div class="check">
+          <span>✓</span> Water treatment and balancing
+        </div>
+
+        <div class="check">
+          <span>✓</span> Green and algae-affected pools
+        </div>
+
+        <div class="check">
+          <span>✓</span> Filter and equipment issues
+        </div>
+
+        <div class="check">
+          <span>✓</span> Pool repair and service calls
+        </div>
+
       </div>
 
     </div>
-  </div>
-</section>
 
-<section class="cta">
-  <div class="wrap">
+  </section>
 
-    <h2>Need Pool Service?</h2>
 
-    <p>
-      Call or text Coastline Pools and tell us what you need. Whether you're
-      looking for weekly service or have a pool problem, we'll take it from there.
-    </p>
+  <section class="local" id="areas">
 
-    <div class="buttons">
-      <a class="btn btn-orange" href="tel:+18439990171">
-        Call (843) 999-0171
-      </a>
+    <div class="wrap">
 
-      <a class="btn btn-white" href="sms:+18439990171">
-        Text Coastline
-      </a>
+      <div class="section-label">
+        Right Here on the Grand Strand
+      </div>
+
+      <h2 class="section-title">
+        Local Pool Service.<br>
+        Not a Call Center.
+      </h2>
+
+      <p class="section-copy">
+        Coastline Pools serves residential pool owners throughout the
+        Murrells Inlet and Grand Strand area.
+      </p>
+
+
+      <div class="local-grid">
+
+        <div class="local-art">
+
+          <img src="circular logo.png"
+               alt="Coastline Pools Grand Strand">
+
+        </div>
+
+
+        <div class="local-copy">
+
+          <h3>
+            Built Around the Communities We Actually Serve.
+          </h3>
+
+          <p>
+            Coastline's routes run throughout the Grand Strand.
+            That means local service, local customers and a pool company
+            focused on the same communities where we work every day.
+          </p>
+
+          <div class="areas">
+
+            <span class="area">Murrells Inlet</span>
+            <span class="area">Garden City Beach</span>
+            <span class="area">Surfside Beach</span>
+            <span class="area">Myrtle Beach</span>
+            <span class="area">Carolina Forest</span>
+            <span class="area">Pawleys Island</span>
+            <span class="area">Georgetown</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
+
+
+  <section class="real-service">
+
+    <div class="wrap real-grid">
+
+      <div class="real-copy">
+
+        <div class="section-label">
+          Coastline Service
+        </div>
+
+        <h2>
+          Know What's Going On With Your Pool.
+        </h2>
+
+        <p>
+          Pool service shouldn't leave you wondering whether somebody showed up
+          or what was done.
+        </p>
+
+        <p>
+          Coastline is building its service around better communication,
+          documented work and a straightforward way to take care of both
+          recurring service and repairs.
+        </p>
+
+      </div>
+
+
+      <div class="promise">
+
+        <h3>Simple idea:</h3>
+
+        <p>
+          <strong>Show up.</strong><br>
+          Take care of the pool.
+        </p>
+
+        <p>
+          <strong>Pay attention.</strong><br>
+          Catch problems before they become bigger problems.
+        </p>
+
+        <p>
+          <strong>Communicate.</strong><br>
+          Make it easier for the customer to know what is happening.
+        </p>
+
+        <a class="btn btn-orange"
+           href="tel:+18439990171">
+           Talk to Coastline
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="reviews" id="reviews">
+
+    <div class="wrap">
+
+      <div class="section-label">
+        Local Customers
+      </div>
+
+      <h2 class="section-title">
+        Dependable Service Matters.
+      </h2>
+
+      <p class="section-copy">
+        Coastline is growing through local customers, repeat service,
+        referrals and reviews from pool owners across the area.
+      </p>
+
+      <div class="rating">
+
+        <span class="stars">★★★★★</span>
+
+        <span>
+          Coastline Pools
+        </span>
+
+      </div>
+
+      <p class="review-copy">
+        Looking for a pool company for weekly service or need help with
+        an existing pool problem? Call or text Coastline and tell us what you need.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="cta">
+
+    <div class="wrap">
+
+      <h2>
+        Your Pool Should Be<br>
+        the Easy Part.
+      </h2>
+
+      <p>
+        Weekly service, equipment trouble or a pool that needs attention —
+        start with Coastline Pools.
+      </p>
+
+      <div class="cta-buttons">
+
+        <a class="btn btn-orange"
+           href="tel:+18439990171">
+           Call (843) 999-0171
+        </a>
+
+        <a class="btn btn-white"
+           href="sms:+18439990171">
+           Text Coastline
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </main>
 
+
 <footer>
+
   <div class="wrap footer-grid">
 
-    <div>
-      <img src="clear header no number.png" alt="Coastline Pools LLC">
+    <div class="footer-brand">
+
+      <img src="clear header no number.png"
+           alt="Coastline Pools, LLC">
 
       <p>
         Weekly Pool Service • Pool Repair • Equipment Service
@@ -722,16 +1168,42 @@
       <p>
         Murrells Inlet & the Grand Strand
       </p>
+
     </div>
 
+
     <div>
-      <a class="footer-phone" href="tel:+18439990171">
-        (843) 999-0171
+
+      <a class="footer-phone"
+         href="tel:+18439990171">
+         (843) 999-0171
       </a>
+
     </div>
 
   </div>
+
 </footer>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Coastline Pools, LLC",
+  "telephone": "+1-843-999-0171",
+  "description": "Weekly pool service, pool repair, equipment service and problem-pool help in Murrells Inlet and the Grand Strand.",
+  "areaServed": [
+    "Murrells Inlet",
+    "Garden City Beach",
+    "Surfside Beach",
+    "Myrtle Beach",
+    "Carolina Forest",
+    "Pawleys Island",
+    "Georgetown"
+  ]
+}
+</script>
 
 </body>
 </html>
