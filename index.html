@@ -783,6 +783,27 @@ body{min-width:0}
  .container{width:calc(100% - 24px)}
  .hero-logo img{max-width:290px}
 }
+
+/* Screenshot-driven hero correction */
+@media(min-width:901px){
+  .hero-content{
+    grid-template-columns:minmax(560px,1.25fr) minmax(280px,.75fr);
+    gap:24px;
+  }
+  .hero-content>div:first-child{min-width:560px}
+  .hero h1{font-size:clamp(58px,5.4vw,82px)}
+  .hero-logo{justify-content:flex-end}
+  .hero-logo img{
+    width:min(360px,100%) !important;
+    max-width:360px !important;
+    height:auto !important;
+  }
+}
+@media(min-width:901px) and (max-width:1100px){
+  .hero-content{grid-template-columns:minmax(500px,1.3fr) minmax(240px,.7fr)}
+  .hero-content>div:first-child{min-width:500px}
+  .hero-logo img{width:min(300px,100%) !important;max-width:300px !important}
+}
 </style>
 </head>
 
