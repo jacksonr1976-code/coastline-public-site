@@ -294,7 +294,7 @@ nav a:hover{
 }
 
 .repair{
-  background-image:url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=85");
+  background-image:url("https://media.beltwaypools.com/Pool_technician_servicing_pump_equipment_68f1f3ae33.webp");
 }
 
 .green{
@@ -763,6 +763,25 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .container{width:calc(100% - 24px)}
   .hero h1{font-size:clamp(42px,14vw,54px)}
   .hero-logo img{max-width:300px}
+}
+
+/* Final containment corrections */
+body{min-width:0}
+.container{max-width:1220px;width:calc(100% - 48px)}
+.hero-content{width:100%}
+.hero-content>div{min-width:0}
+.hero-logo img{max-width:500px;width:100%;margin-inline:auto}
+.service-grid{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-card{max-width:100%;min-width:0}
+@media(max-width:900px){
+ .container{width:calc(100% - 32px)}
+ .service-grid{grid-template-columns:1fr}
+ .hero-content{grid-template-columns:1fr}
+ .hero-logo img{max-width:380px}
+}
+@media(max-width:520px){
+ .container{width:calc(100% - 24px)}
+ .hero-logo img{max-width:290px}
 }
 </style>
 </head>
