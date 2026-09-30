@@ -804,6 +804,14 @@ body{min-width:0}
   .hero-content>div:first-child{min-width:500px}
   .hero-logo img{width:min(300px,100%) !important;max-width:300px !important}
 }
+
+/* Remove rectangular logo backdrop while preserving approved hero geometry */
+.hero-logo{isolation:isolate}
+.hero-logo img{
+  border-radius:50% !important;
+  clip-path:circle(49.2% at 50% 50%) !important;
+  background:transparent !important;
+}
 </style>
 </head>
 
