@@ -7,6 +7,7 @@
 <title>Coastline Pools, LLC | Pool Service & Repair | Murrells Inlet SC</title>
 <meta name="description" content="Weekly pool cleaning, repairs, equipment service and green pool recovery in Murrells Inlet and the Grand Strand. Request a quote from Coastline Pools, LLC.">
 <link rel="canonical" href="https://www.coastlinepoolsllc.com/">
+<link rel="icon" type="image/png" href="/circular%20logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -864,6 +865,27 @@ body{min-width:0}
 .faq-list p{padding:12px 3px 0;line-height:1.65;color:#153c52}
 @media(max-width:520px){.faq-section{padding:46px 0}.faq-list details{padding:14px}.faq-list summary{font-size:15px}}
 
+
+/* Run 123: contain decorative service-area glow and restore accessible mobile navigation. */
+.areas{overflow:hidden}
+.menu-toggle{display:none;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid rgba(255,255,255,.55);border-radius:24px;background:#fff;color:#003c61;font:inherit;font-size:12px;font-weight:900;cursor:pointer;white-space:nowrap}
+@media(max-width:900px){
+  .nav{position:relative;gap:12px}
+  .menu-toggle{display:inline-flex;flex:0 0 auto}
+  #primary-navigation{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:1001;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:8px;background:#002d4b;border:1px solid rgba(255,255,255,.25);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.28)}
+  #primary-navigation[data-open="true"]{display:flex}
+  #primary-navigation a{display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:7px}
+  .top-phone{margin-left:0}
+}
+@media(max-width:520px){
+  .nav{gap:6px}
+  .logo img{width:96px}
+  .top-quote{font-size:10px;padding:9px 7px}
+  .top-phone{font-size:10px;padding:8px 7px}
+  .menu-toggle{min-height:38px;padding:7px 9px;font-size:11px}
+}
+@media(max-width:380px){.top-quote{display:none}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included with weekly pool service?","acceptedAnswer":{"@type":"Answer","text":"Coastline’s weekly service includes cleaning, water treatment, brushing, vacuuming and equipment checks. Contact Coastline to discuss the needs of your pool."}},{"@type":"Question","name":"Which areas does Coastline Pools serve?","acceptedAnswer":{"@type":"Answer","text":"Coastline lists Murrells Inlet, Garden City Beach, Surfside Beach, Myrtle Beach, Carolina Forest, Pawleys Island and Georgetown, South Carolina. Contact Coastline to confirm that your address fits the current route."}},{"@type":"Question","name":"Can Coastline help with a green or algae-affected pool?","acceptedAnswer":{"@type":"Answer","text":"Yes. Coastline offers green pool recovery and can discuss the condition of your pool and the next service step."}},{"@type":"Question","name":"Does Coastline Pools handle pool equipment repairs?","acceptedAnswer":{"@type":"Answer","text":"Coastline lists pool and equipment repair, including help with pumps, filters and plumbing. Describe the issue when you call, text or request a quote."}},{"@type":"Question","name":"How do I request a pool service quote?","acceptedAnswer":{"@type":"Answer","text":"Use this quote form, call (843) 999-0171 or text Coastline at (843) 999-0171. Include your location and the service you need so Coastline can follow up."}}]}</script>
 </head>
@@ -877,7 +899,9 @@ body{min-width:0}
       <img src="clear header no number.png" alt="Coastline Pools LLC">
     </a>
 
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-navigation" aria-expanded="false">Menu</button>
+
+    <nav id="primary-navigation" aria-label="Primary navigation">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#areas">Service Areas</a>
@@ -1263,5 +1287,23 @@ body{min-width:0}
 })();
 </script>
 
+<script>
+(() => {
+  const button = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('primary-navigation');
+  if (!button || !menu) return;
+  const setOpen = (open) => {
+    button.setAttribute('aria-expanded', String(open));
+    menu.dataset.open = String(open);
+  };
+  button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>
