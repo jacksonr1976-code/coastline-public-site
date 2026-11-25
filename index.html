@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Coastline Pools, LLC","url":"https://www.coastlinepoolsllc.com/","telephone":"+1-843-999-0171","image":"https://www.coastlinepoolsllc.com/clear%20header%20no%20number.png","areaServed":["Murrells Inlet, South Carolina","Garden City Beach, South Carolina","Surfside Beach, South Carolina","Myrtle Beach, South Carolina","Carolina Forest, South Carolina","Pawleys Island, South Carolina","Georgetown, South Carolina"],"description":"Weekly pool service, pool repair, equipment service and green pool recovery throughout Murrells Inlet and the Grand Strand."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Coastline Pools, LLC","url":"https://www.coastlinepoolsllc.com/","telephone":"+1-843-999-0171","image":"https://www.coastlinepoolsllc.com/clear%20header%20no%20number.png","areaServed":["Murrells Inlet, South Carolina","Garden City Beach, South Carolina","Surfside Beach, South Carolina","Myrtle Beach, South Carolina","Carolina Forest, South Carolina","Pawleys Island, South Carolina","Georgetown, South Carolina"],"description":"Weekly pool service, pool repair, equipment service and green pool recovery throughout Murrells Inlet and the Grand Strand."}</script>
 
 <style>
 /* Font stylesheets are loaded with display=swap in the document head. */
@@ -101,8 +101,12 @@ nav a:hover{
   color:#31dfff;
 }
 
+
+.top-quote{margin-left:auto;padding:12px 15px;border-radius:30px;background:#fff;color:#003c61;font-size:13px;font-weight:900;white-space:nowrap}
+.top-quote:hover{background:#e9faff}
+
 .top-phone{
-  margin-left:20px;
+  margin-left:12px;
   padding:15px 24px;
   border-radius:40px;
   background:linear-gradient(#ff9e00,#ff7900);
@@ -634,6 +638,7 @@ footer{
     font-size:13px;
     padding:12px 15px;
   }
+  .top-quote{font-size:12px;padding:11px 12px}
 
   .logo img{
     width:145px;
@@ -705,10 +710,14 @@ footer{
     width:125px;
   }
 
+  .nav{gap:9px}
   .top-phone{
-    font-size:12px;
-    padding:10px 12px;
+    margin-left:0;
+    font-size:11px;
+    padding:10px 9px;
+    white-space:nowrap;
   }
+  .top-quote{font-size:11px;padding:9px 7px;white-space:nowrap}
 
   .hero h1{
     font-size:51px;
@@ -846,7 +855,17 @@ body{min-width:0}
 @media(max-width:900px){.quote-layout{grid-template-columns:1fr}.quote-form{max-width:680px;width:100%;margin-inline:auto}}
 @media(max-width:520px){.quote-section{padding:48px 0}.quote-form{padding:19px 16px}.quote-fields{grid-template-columns:1fr}.quote-copy h2{font-size:43px}}
 
+
+.faq-section{padding:68px 0;background:#fff}
+.faq-section h2{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(38px,5vw,56px);color:#003458;margin:8px 0 24px}
+.faq-list{display:grid;gap:12px;max-width:920px}
+.faq-list details{border:1px solid #c8dfe9;border-radius:12px;background:#f8fcfe;padding:17px 20px}
+.faq-list summary{cursor:pointer;font-size:16px;line-height:1.5;font-weight:900;color:#003458}
+.faq-list p{padding:12px 3px 0;line-height:1.65;color:#153c52}
+@media(max-width:520px){.faq-section{padding:46px 0}.faq-list details{padding:14px}.faq-list summary{font-size:15px}}
+
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included with weekly pool service?","acceptedAnswer":{"@type":"Answer","text":"Coastline’s weekly service includes cleaning, water treatment, brushing, vacuuming and equipment checks. Contact Coastline to discuss the needs of your pool."}},{"@type":"Question","name":"Which areas does Coastline Pools serve?","acceptedAnswer":{"@type":"Answer","text":"Coastline lists Murrells Inlet, Garden City Beach, Surfside Beach, Myrtle Beach, Carolina Forest, Pawleys Island and Georgetown, South Carolina. Contact Coastline to confirm that your address fits the current route."}},{"@type":"Question","name":"Can Coastline help with a green or algae-affected pool?","acceptedAnswer":{"@type":"Answer","text":"Yes. Coastline offers green pool recovery and can discuss the condition of your pool and the next service step."}},{"@type":"Question","name":"Does Coastline Pools handle pool equipment repairs?","acceptedAnswer":{"@type":"Answer","text":"Coastline lists pool and equipment repair, including help with pumps, filters and plumbing. Describe the issue when you call, text or request a quote."}},{"@type":"Question","name":"How do I request a pool service quote?","acceptedAnswer":{"@type":"Answer","text":"Use this quote form, call (843) 999-0171 or text Coastline at (843) 999-0171. Include your location and the service you need so Coastline can follow up."}}]}</script>
 </head>
 
 <body>
@@ -865,6 +884,8 @@ body{min-width:0}
       <a href="#about">About</a>
       <a href="#quote">Request a Quote</a>
     </nav>
+
+    <a class="top-quote" href="#quote">Get a Quote</a>
 
     <a class="top-phone" href="tel:+18439990171">
       ☎ &nbsp;(843) 999-0171
@@ -912,6 +933,8 @@ body{min-width:0}
         <a class="button white-btn" href="sms:+18439990171">
           ●●● &nbsp; Text Coastline
         </a>
+
+        <a class="button white-btn" href="#quote">Request a Quote</a>
 
       </div>
 
@@ -1129,6 +1152,20 @@ body{min-width:0}
       <button class="button orange-btn quote-submit" type="submit">Send Quote Request</button>
       <p class="form-status" id="quote-status" role="status" aria-live="polite"></p>
     </form>
+  </div>
+</section>
+
+<section class="faq-section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="small-title">Clear Answers</div>
+    <h2 id="faq-title">Pool Service FAQs</h2>
+    <div class="faq-list">
+      <details><summary>What is included with weekly pool service?</summary><p>Coastline’s weekly service includes cleaning, water treatment, brushing, vacuuming and equipment checks. Contact Coastline to discuss the needs of your pool.</p></details>
+      <details><summary>Which areas does Coastline Pools serve?</summary><p>Coastline lists Murrells Inlet, Garden City Beach, Surfside Beach, Myrtle Beach, Carolina Forest, Pawleys Island and Georgetown, South Carolina. Contact Coastline to confirm that your address fits the current route.</p></details>
+      <details><summary>Can Coastline help with a green or algae-affected pool?</summary><p>Yes. Coastline offers green pool recovery and can discuss the condition of your pool and the next service step.</p></details>
+      <details><summary>Does Coastline Pools handle pool equipment repairs?</summary><p>Coastline lists pool and equipment repair, including help with pumps, filters and plumbing. Describe the issue when you call, text or request a quote.</p></details>
+      <details><summary>How do I request a pool service quote?</summary><p>Use this quote form, call (843) 999-0171 or text Coastline at (843) 999-0171. Include your location and the service you need so Coastline can follow up.</p></details>
+    </div>
   </div>
 </section>
 
